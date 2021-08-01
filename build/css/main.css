@@ -1,3 +1,117 @@
+/* FONT */
+@font-face {
+  font-family: "museo";
+  src: url("../resources/font/MuseoSans-100.woff2");
+  font-weight: 100;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "museo";
+  src: url("../resources/font/MuseoSans-300.woff2");
+  font-weight: 300;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "museo";
+  src: url("../resources/font/MuseoSans-400.woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "museo";
+  src: url("../resources/font/MuseoSans-700.woff2");
+  font-weight: 700;
+  font-display: swap;
+}
+
+/* BASE */
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: "museo", sans-serif;
+  background-image: url("../resources/img/bg.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  color: white;
+  font-size: 1rem;
+  min-height: 200vh;
+}
+
+h1 {
+  font-weight: 700;
+}
+
+.mod--scroll-down .cyn-header {
+  background: rgba(0, 0, 0, 0.568);
+  border-bottom: 2px solid #fad695;
+  -webkit-box-shadow: 0 1px 5px 3px #000000c9;
+          box-shadow: 0 1px 5px 3px #000000c9;
+}
+
+.mod--scroll-down .cyn-header, .mod--scroll-down .cyn-logo {
+  height: 150px;
+}
+
+.mod--scroll-down .cyn-main {
+  margin-top: 150px;
+}
+
+.cyn-header {
+  -webkit-transition: all 0.4s linear;
+  transition: all 0.4s linear;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 381px;
+  padding: 1rem 0;
+}
+
+.cyn-logo {
+  -webkit-transition: all 0.4s linear;
+  transition: all 0.4s linear;
+  height: 381px;
+  -webkit-transform-origin: top center;
+          transform-origin: top center;
+}
+
+.cyn-main {
+  -webkit-transition: all 0.4s linear;
+  transition: all 0.4s linear;
+  margin-top: 381px;
+}
+
+.cyn-claim {
+  text-align: center;
+}
+
+.cyn-countdown {
+  font-size: 3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
 .cyn-confirmation-form {
   display: none;
 }

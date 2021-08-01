@@ -1,9 +1,101 @@
-.cyn{
-    &-confirmation-form{
-        display: none;
-    }
+/* FONT */
+@font-face {
+	font-family: "museo";
+	src: url("../resources/font/MuseoSans-100.woff2");
+	font-weight: 100;
+	font-display: swap;
+}
+@font-face {
+	font-family: "museo";
+	src: url("../resources/font/MuseoSans-300.woff2");
+	font-weight: 300;
+	font-display: swap;
+}
+@font-face {
+	font-family: "museo";
+	src: url("../resources/font/MuseoSans-400.woff2");
+	font-weight: 400;
+	font-display: swap;
 }
 
-.showBlock{
-    display: block;
+@font-face {
+	font-family: "museo";
+	src: url("../resources/font/MuseoSans-700.woff2");
+	font-weight: 700;
+	font-display: swap;
+}
+
+/* BASE */
+html {
+	font-size: 16px;
+}
+body {
+	font-family: "museo", sans-serif;
+	background-image: url("../resources/img/bg.jpg");
+	background-size: cover;
+	background-attachment: fixed;
+	color: white;
+	font-size: 1rem;
+	min-height: 200vh;
+}
+
+h1 {
+	font-weight: 700;
+}
+
+.mod--scroll-down {
+	.cyn {
+		&-header {
+			background: rgba(0, 0, 0, 0.568);
+			border-bottom: 2px solid #fad695;
+			box-shadow: 0 1px 5px 3px #000000c9;
+		}
+		&-header,
+		&-logo {
+			height: 150px;
+		}
+		&-main {
+			margin-top: 150px;
+		}
+	}
+}
+
+.cyn {
+	&-header {
+		transition: all 0.4s linear;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100vw;
+		height: 381px;
+		padding: 1rem 0;
+	}
+	&-logo {
+		transition: all 0.4s linear;
+		height: 381px;
+		transform-origin: top center;
+	}
+	&-main {
+		transition: all 0.4s linear;
+		margin-top: 381px;
+	}
+	&-claim {
+		text-align: center;
+	}
+	&-countdown {
+		font-size: 3rem;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	&-confirmation-form {
+		display: none;
+	}
+}
+
+.showBlock {
+	display: block;
 }
