@@ -24,9 +24,10 @@
 		<![endif]-->
 		<header class="cyn-header">
 			<img class="cyn-logo" src="./resources/img/title.png" />
+            <div class="cyn-burguer" onclick="classList.toggle('mod--open')"></div>
 		</header>
 		<main class="cyn-main">
-			<div class="cyn-claim">
+             <div class="cyn-claim">
 				<h1>Sábado 14 de Agosto de 2021</h1>
 				<h2>
 					Quedan
@@ -34,7 +35,9 @@
 					para el gran dia
 				</h2>
 			</div>
-
+			<div class="cyn-container">
+                <div class="whatsapp-confirm">Tambien puedes confirmar tu asistencia a traves de Whatsapp</div>    
+            </div>
 			<button onclick="showFormConfirmation()">Confirmar asistencia</button>
 			<div class="cyn-confirmation-form">
 				<!-- Begin Mailchimp Signup Form -->
@@ -127,7 +130,7 @@
 			</div>
 		</main>
 
-		<div class="whatsapp-confirm">Tambien puedes confirmar tu asistencia a traves de Whatsapp</div>
+		
 		<script type="text/javascript" src="js/main.js"></script>
 	</body>
 </html>
