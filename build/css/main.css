@@ -28,6 +28,11 @@
 }
 
 /* BASE */
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
 html {
   font-size: 16px;
 }
@@ -49,7 +54,7 @@ h1 {
 .cyn-header {
   -webkit-transition: all 0.6s linear;
   transition: all 0.6s linear;
-  position: fixed;
+  position: relative;
   top: 0;
   left: 0;
   width: calc(100% - 4rem);
@@ -57,11 +62,14 @@ h1 {
 }
 
 .cyn-burguer {
-  position: relative;
+  position: absolute;
+  top: 52px;
+  right: 62px;
   display: block;
   width: 50px;
   height: 29px;
   cursor: pointer;
+  z-index: 2;
 }
 
 .cyn-burguer:after, .cyn-burguer:before {
@@ -87,25 +95,39 @@ h1 {
   bottom: 0;
 }
 
-.cyn-burguer.mod--open:before {
-  top: 50%;
-  -webkit-transform: rotate(45deg) translateY(-50%);
-          transform: rotate(45deg) translateY(-50%);
-  -webkit-box-shadow: 0 0 0 0 transparent;
-          box-shadow: 0 0 0 0 transparent;
+.cyn-menu {
+  position: fixed;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100vh;
+  width: 300px;
+  top: 0;
+  right: -300px;
+  -webkit-transition: all 0.6s linear;
+  transition: all 0.6s linear;
+  background: #0d2233;
+  padding: 134px 2rem 0;
 }
 
-.cyn-burguer.mod--open:after {
-  bottom: 50%;
-  -webkit-transform: rotate(-45deg) translateY(50%);
-          transform: rotate(-45deg) translateY(50%);
+.cyn-menu a {
+  text-align: right;
+  color: white;
+  text-decoration: none;
 }
 
 .cyn-logo {
   display: block;
   -webkit-transition: all 0.6s linear;
   transition: all 0.6s linear;
-  height: 381px;
+  height: 300px;
   margin-left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
@@ -150,7 +172,26 @@ h1 {
   background: linear-gradient(180deg, rgba(52, 77, 108, 0.7) 0%, rgba(52, 77, 108, 0.35) 50%, rgba(52, 77, 108, 0) 100%);
 }
 
+.mod--open-menu .cyn-burguer:before {
+  top: 50%;
+  -webkit-transform: rotate(45deg) translateY(-50%);
+          transform: rotate(45deg) translateY(-50%);
+  -webkit-box-shadow: 0 0 0 0 transparent;
+          box-shadow: 0 0 0 0 transparent;
+}
+
+.mod--open-menu .cyn-burguer:after {
+  bottom: 50%;
+  -webkit-transform: rotate(-45deg) translateY(50%);
+          transform: rotate(-45deg) translateY(50%);
+}
+
+.mod--open-menu .cyn-menu {
+  right: 0;
+}
+
 .mod--scroll-down .cyn-header {
+  position: fixed;
   background: rgba(0, 0, 0, 0.568);
   border-bottom: 2px solid #fad695;
   -webkit-box-shadow: 0 1px 5px 3px #000000c9;
@@ -166,8 +207,14 @@ h1 {
           justify-content: space-between;
 }
 
+.mod--scroll-down .cyn-burguer {
+  top: 0;
+  right: 30px;
+  position: relative;
+}
+
 .mod--scroll-down .cyn-logo {
-  height: 150px;
+  height: 100px;
   margin: 0;
   -webkit-transform: translateX(0);
           transform: translateX(0);

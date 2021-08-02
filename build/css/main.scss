@@ -26,6 +26,10 @@
 }
 
 /* BASE */
+*{
+	box-sizing: border-box;
+}
+
 html {
 	font-size: 16px;
 }
@@ -46,59 +50,69 @@ h1 {
 .cyn {
 	&-header {
 		transition: all 0.6s linear;
-		position: fixed;
+		position: relative;
 		top: 0;
 		left: 0;
-        width: calc(100% - 4rem);
+		width: calc(100% - 4rem);
 		padding: 1rem 2rem;
 	}
-    &-burguer{
-        position: relative;
-        display: block;
-        width: 50px;
-        height: 29px;
-        cursor: pointer;
-        &:after, &:before{
-            content:"";
-            transition: all 0.2s linear;
-            transform-origin: center center;
-            width: 50px;
-            height: 5px;
-            border-radius: 5px;
-            background: white;
-            position: absolute;
-            
-        }
-        &:before{
-            top: 0;
-            box-shadow: 0 12px 0 0 white;
-        }
-        &:after{
-            bottom: 0;
-        }
-        &.mod--open{
-             &:before{
-                top: 50%;
-                transform: rotate(45deg) translateY(-50%);
-                box-shadow: 0 0 0 0 transparent;
-            }
-            &:after{
-                bottom: 50%;
-                transform: rotate(-45deg) translateY(50%);
-            }
-        }
-    }
-	&-logo {
-        display: block;
+	&-burguer {
+		position: absolute;
+		top: 52px;
+		right: 62px;
+		display: block;
+		width: 50px;
+		height: 29px;
+		cursor: pointer;
+		z-index: 2;
+		&:after,
+		&:before {
+			content: "";
+			transition: all 0.2s linear;
+			transform-origin: center center;
+			width: 50px;
+			height: 5px;
+			border-radius: 5px;
+			background: white;
+			position: absolute;
+		}
+		&:before {
+			top: 0;
+			box-shadow: 0 12px 0 0 white;
+		}
+		&:after {
+			bottom: 0;
+		}
+	}
+	&-menu {
+		position: fixed;
+		display: flex;
+		flex-flow: column;
+		align-items: center;
+		height: 100vh;
+		width: 300px;
+		top: 0;
+		right: -300px;
 		transition: all 0.6s linear;
-		height: 381px;
-        margin-left: 50%;
-        transform: translateX(-50%);
+		background: #0d2233;
+		padding: 134px 2rem 0;
+		a{
+			text-align: right;
+			color: white;
+			text-decoration: none;
+		}
+	}
+	&-logo {
+		display: block;
+		transition: all 0.6s linear;
+		height: 300px;
+		margin-left: 50%;
+		transform: translateX(-50%);
 		transform-origin: top;
 	}
 	&-main {
-        max-width: 1240px;
-        margin: auto;
+		max-width: 1240px;
+		margin: auto;
 		transition: all 0.6s linear;
 		margin-top: 381px;
 	}
@@ -114,35 +128,59 @@ h1 {
 	&-confirmation-form {
 		display: none;
 	}
-    &-container{
-        width: 100%;
-        min-height: 240px;
-        border-radius: 25px;
-        background: linear-gradient(180deg, rgba(52,77,108,0.7) 0%, rgba(52,77,108,0.35) 50%, rgba(52,77,108,0) 100%);
-    }
+	&-container {
+		width: 100%;
+		min-height: 240px;
+		border-radius: 25px;
+		background: linear-gradient(180deg, rgba(52, 77, 108, 0.7) 0%, rgba(52, 77, 108, 0.35) 50%, rgba(52, 77, 108, 0) 100%);
+	}
+}
+
+.mod--open-menu {
+	.cyn {
+		&-burguer {
+			&:before {
+				top: 50%;
+				transform: rotate(45deg) translateY(-50%);
+				box-shadow: 0 0 0 0 transparent;
+			}
+			&:after {
+				bottom: 50%;
+				transform: rotate(-45deg) translateY(50%);
+			}
+		}
+		&-menu{
+			right: 0;
+		}
+	}
 }
 
 .mod--scroll-down {
 	.cyn {
 		&-header {
+			position: fixed;
 			background: rgba(0, 0, 0, 0.568);
 			border-bottom: 2px solid #fad695;
 			box-shadow: 0 1px 5px 3px #000000c9;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+		}
+		&-burguer {
+			top: 0;
+			right: 30px;
+			position: relative;
 		}
 		&-logo {
-			height: 150px;
-            margin: 0;
-            transform: translateX(0);
+			height: 100px;
+			margin: 0;
+			transform: translateX(0);
 		}
 		&-main {
 			margin-top: 300px;
 		}
 	}
 }
-
 
 .showBlock {
 	display: block;

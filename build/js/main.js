@@ -11,3 +11,7 @@ function scrollDown(){
     }
 }
 
+function openMenu(){
+    document.body.classList.toggle("mod--open-menu");
+}
+
