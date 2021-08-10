@@ -24,39 +24,48 @@
 		<![endif]-->
 		<header class="cyn-header">
 			<img class="cyn-logo" src="./resources/img/title.png" />
+			<div class="cyn-claim">
+				<h1>Sábado 14 de Agosto de 2021 <br> a las 18:00 horas</h1>
+				<h2 class="cyn-countdown" id="countdown"></h2>
+			</div>
             <div class="cyn-burguer" onclick="openMenu()"></div>
 			<nav class="cyn-menu">
-				<a href="#">Lugar de la celebración</a>
-				<a href="#">Confirmar asistencia</a>
-				<a href="#">Regalos</a>
+				<a class="cyn-menu__btn" onclick="openMenu()" href="#place">Lugar de Celebración</a>
+				<a class="cyn-menu__btn" onclick="openMenu()" href="#covid">Información Covid-19</a>
+				<a class="cyn-menu__btn" onclick="openMenu()" href="#confirmation"><strike>Confirmar Asistencia</strike></a>
+				<a class="cyn-menu__btn" onclick="openMenu()" href="#gifts">Guia de Regalos</a>
 			</nav>
 		</header>
 		<main class="cyn-main">
-             <div class="cyn-claim">
-				<h1>Sábado 14 de Agosto de 2021</h1>
-				<h2>
-					Quedan
-					<div class="cyn-countdown" id="countdown"></div>
-					para el gran dia
-				</h2>
+			<div id="place" class="cyn-container">
+                <h3>Lugar de Celebración</h3>
+				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d225205.45045461474!2d-16.915742083593756!3d28.12105329999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xc6a911c471a79fb%3A0xc3536f1cf2873e6d!2sHard%20Rock%20Hotel%20Tenerife!5e0!3m2!1ses!2ses!4v1628564145023!5m2!1ses!2ses" width="300" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+				<a class="cyn-button" href="https://www.google.com/maps/dir//Hard+Rock+Hotel+Tenerife+Avenida+Adeje+300+Av.+Playa+Para%C3%ADso,+s%2Fn+38678+Adeje,+Santa+Cruz+de+Tenerife/@28.1211246,-16.8106858,13z/data=!4m9!4m8!1m0!1m5!1m1!1s0xc6a911c471a79fb:0xc3536f1cf2873e6d!2m2!1d-16.7756664!2d28.1210533!3e0">
+					Iniciar trayecto
+				</a>
 			</div>
-			<div class="cyn-container">
-                <div class="whatsapp-confirm">Tambien puedes confirmar tu asistencia a traves de Whatsapp</div>    
+			<div id="covid" class="cyn-container">
+				<h3>Información Covid-19</h3>
             </div>
-			<button onclick="showFormConfirmation()">Confirmar asistencia</button>
+			<div id="confirmation" class="cyn-container">
+				<h3>Confirmar Asistencia</h3>
+				<p>Ya todos los asistentes confirmaron su asistencia.<br>Muchas gracias por su confirmación.</p>
+				<div class="mod--disabled-container">
+					<button class="cyn-button" onclick="showFormConfirmation()">Confirmar asistencia</button>
+					<a class="cyn-button" href="https://wa.me/652207794?text=Hola%20confirmo%20la%20asistencia%20a%20vuestra%20boda" target="_blank">Confirmar a traves de Whatsapp</a> 
+				</div>
+			</div>
+			<div id="gifts" class="cyn-container">
+                <h3>Guia de Regalos</h3>
+				<p>No tenemos lista de boda, y vuestra presencia es nuestro mejor regalo, pero si deseais ayudarnos, podeis realizarnos una transferencia al siguiente numero de cuenta.</p>   
+				<div class="accountNumber">
+				</div>
+				También aceptamos sobre en mano.
+			</div>
+		</main>
+		<div class="cyn-modal">
 			<div class="cyn-confirmation-form">
 				<!-- Begin Mailchimp Signup Form -->
-				<!--/* <link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css"> */-->
-				<style type="text/css">
-					#mc_embed_signup {
-						background: #fff;
-						clear: left;
-						font: 14px Helvetica, Arial, sans-serif;
-					}
-
-					/* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
-        We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
-				</style>
 				<div id="mc_embed_signup">
 					<form
 						action="https://gmail.us1.list-manage.com/subscribe/post?u=461411181536e56f26ba2691e&amp;id=ed09bd1f13"
@@ -133,9 +142,7 @@
 				</script>
 				<!--End mc_embed_signup-->
 			</div>
-		</main>
-
-		
-		<script type="text/javascript" src="js/main.js"></script>
+		</div>
+	<script src="js/main.js"></script>
 	</body>
 </html>
