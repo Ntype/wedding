@@ -1,8 +1,3 @@
-function showFormConfirmation(){
-    var element = document.querySelector(".cyn-confirmation-form");
-    element.classList.add("showBlock");
-}
-
 function scrollDown(){
     if (window.scrollY > 0) {
         document.body.classList.add("mod--scroll-down");

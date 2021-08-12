@@ -1,17 +1,89 @@
 <!DOCTYPE html>
 
 <html lang="es">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<title>Boda de Cristina y Norberto</title>
+		<meta name="description" content="Pagina web de la boda de Cristina y Norberto" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta property="og:image:secure_url" content="https://www.cristinaynorberto.com/resources/invitation.jpg" />
+		<meta property="og:type" content="website" />
+		<link rel="preload" as="font" href="resources/font/MuseoSans-100.woff2" type="font/woff2" crossorigin="anonymous" />
+		<link rel="preload" as="font" href="resources/font/MuseoSans-300.woff2" type="font/woff2" crossorigin="anonymous" />
+		<link rel="preload" as="font" href="resources/font/MuseoSans-400.woff2" type="font/woff2" crossorigin="anonymous" />
+		<link rel="preload" as="font" href="resources/font/MuseoSans-700.woff2" type="font/woff2" crossorigin="anonymous" />
+		<link rel="stylesheet" href="css/normalize.css" />
+		<link rel="stylesheet" href="css/main.css" />
+		<script src="js/countdown.js"></script>
+	</head>
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Boda de Cristina y Norberto</title>
-    <meta name="description" content="Pagina web de la boda de Cristina y Norberto">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
-
-<body style="background: black; display: flex; align-items: center; justify-content: center; height: 100vh; margin: 0;">
-    <h1 style="color:white; font-weight: 700; font-family: sans-serif; font-size: 40px; text-align: center;">Próximamente <br> Disculpen las molestias</h1>
-</body>
-
+	<body onscroll="scrollDown()">
+		<!--[if lt IE 11]>
+			<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+		<![endif]-->
+		<header class="cyn-header">
+			<img class="cyn-logo" src="./resources/img/title.png" />
+			<div class="cyn-claim">
+				<h1>El Sábado 14 de Agosto de 2021 a las 18:00 horas</h1>
+				<h2 class="cyn-countdown" id="countdown"></h2>
+			</div>
+            <div class="cyn-burguer" onclick="openMenu()"></div>
+			<nav class="cyn-menu">
+				<a class="cyn-menu__btn" onclick="openMenu()" href="#">Inicio</a>
+				<a class="cyn-menu__btn" onclick="openMenu()" href="#place">Lugar de Celebración</a>
+				<a class="cyn-menu__btn" onclick="openMenu()" href="#covid">Información Covid-19</a>
+				<a class="cyn-menu__btn" onclick="openMenu()" href="#gifts">Guia de Regalos</a>
+				<a class="cyn-menu__btn" onclick="openMenu()" href="#confirmation"><strike>Confirmar Asistencia</strike></a>
+			</nav>
+		</header>
+		<main class="cyn-main">
+			<div id="inicio" class="cyn-container__wrapper">
+				<div class="cyn-container">
+					<img class="pixel-art" src="resources/img/walk.gif"/>
+					<h3 class="cyn-title">¡QUE NOS CASAMOS!</h3>
+					<p class="mod--text-center">Les invitamos a la fiesta más importante de nuestra vida. Llenad la maleta de sonrisas, ganas de bailar y mucho amor.</p>
+				</div>
+			</div>
+			<div id="place" class="cyn-container__wrapper">
+				<div class="cyn-container">
+					<h3 class="cyn-title">Lugar de Celebración</h3>
+					<img class="logo-hardrock" src="resources/img/hardrock-logo.png"/>
+					<p>Tanto la ceremonia como el banquete tendra lugar en Hard Rock Hotel Tenerife, acudir a recepcion y preguntar por la boda de Cristina y Norberto, les daran las indicaciones para llegar a la planta 16 donde se realizara la ceremonia, os esperamos a todos</p>
+					<h4 class="cyn-subtitle">¿Como llegar a Hard Rock Hotel?</h4>
+					<a target="_blank" href="https://www.google.com/maps/dir//Hard+Rock+Hotel+Tenerife+Avenida+Adeje+300+Av.+Playa+Para%C3%ADso,+s%2Fn+38678+Adeje,+Santa+Cruz+de+Tenerife/@28.1211246,-16.8106858,13z/data=!4m9!4m8!1m0!1m5!1m1!1s0xc6a911c471a79fb:0xc3536f1cf2873e6d!2m2!1d-16.7756664!2d28.1210533!3e0">
+						<img class="cyn-map" src="resources/img/map.png"/>
+						<div class="cyn-button">Iniciar Trayecto Guiado</div>
+					</a>
+				</div>
+			</div>
+			<div id="covid" class="cyn-container__wrapper">
+				<div class="cyn-container">
+					<h3 class="cyn-title">Información Covid-19</h3>
+					<p>La celebración se llevara a cabo bajo los mas altos protocolos contra la Covid-19, el 90% de los asistentes estan vacunados con la pauta completa, el 10% restantes son niños pequeños que tienen PCR negativa. Los asistentes estaran sentados en grupos burbuja y el 70% de la celebración se realizara en exteriores, Hard Rock Hotel nos garantiza la desinfeción y la seguridad total del evento.</p>
+					<p>Por normativa vigente y para los asistentes que no se hospedan en el hotel, se les pedira en recepción sus datos de control, para agilizar este tramite, les adjuntamos el documento a rellenar por si desean traerlo firmado desde casa, muchas gracias y disculpen las molestias.</p>
+					<a class="cyn-button" target="_blank" href="resources/documents/declaracion.pdf" download>
+						Descargar Documento
+					</a>	
+				</div>
+			</div>
+			<div id="gifts" class="cyn-container__wrapper">
+				<div class="cyn-container">
+					<h3 class="cyn-title">Guia de Regalos</h3>
+					<p>No tenemos lista de boda, y vuestra presencia es nuestro mejor regalo, pero si deseais ayudarnos, podeis realizarnos una transferencia al siguiente numero de cuenta.</p>   
+					<div class="accountNumber">
+					</div>
+					<p>También aceptamos sobre en mano.</p>
+				</div>
+			</div>
+			<div id="confirmation" class="cyn-container__wrapper">
+				<div class="cyn-container">
+					<h3 class="cyn-title">Confirmar Asistencia</h3>
+					<p class="mod--text-center">Ya todos los asistentes confirmaron su asistencia. Muchas gracias por su confirmación.</p>
+					<a class="cyn-button mod--disabled" href="https://wa.me/652207794?text=Hola%20confirmo%20la%20asistencia%20a%20vuestra%20boda" target="_blank">Confirmar a traves de Whatsapp</a> 
+				</div>
+			</div>
+		</main>
+		<script src="js/main.js"></script>
+	</body>
 </html>
